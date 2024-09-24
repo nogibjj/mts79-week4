@@ -1,4 +1,4 @@
-name: CI
+name: Actions Matrix
 on:
   push:
     branches: [ "main" ]
@@ -6,16 +6,22 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            python-version: [3.8.x, 3.9.x, 3.10.x, 3.11.x]
+            os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}    
+
     steps:
-      - uses: actions/checkout@v3
-      - name: install packages
+      - uses: actions/checkout@v3    
+      - name: install
         run: make install
       - name: lint
         run: make lint
       - name: test
         run: make test
-      - name: format
+      - name: format 
         run: make format
