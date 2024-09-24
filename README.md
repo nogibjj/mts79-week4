@@ -1,6 +1,6 @@
-# Data Engineering Systems Course - Week 1
+# GitHub Actions Matrix Build for Multiple Python Versions and Operating Systems
 
-Welcome to the repository for the first week of the Data Engineering Systems course at Duke University. 
+The purpose of this project is to implement a testing framework that ensures the codebase is compatible across multiple Python versions. By using GitHub Actions, the project automates the process of running tests whenever code changes are made. This setup helps catch compatibility issues early, promotes best practices in code quality, and ensures that the application runs smoothly in different environments
 
 ## Overview
 
@@ -40,5 +40,5 @@ This repository serves as a foundational template for future assignments in the 
     python test_main.py
     ```
 
-
+![alt text](2024-09-24.png)
 
